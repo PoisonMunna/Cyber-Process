@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #0d1117;
+    --panel-bg: #161b22;
+    --queue-color: #d29922; /* Orange */
+    --ll-color: #2f81f7;    /* Blue */
+    --stack-color: #238636; /* Green */
+    --text-color: #c9d1d9;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 { margin: 0; letter-spacing: -1px; }
+.highlight { color: var(--ll-color); }
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+.panel {
+    background: var(--panel-bg);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel h2 {
+    font-size: 1rem;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.visual-container {
+    flex-grow: 1;
+    background: #000;
+    border-radius: 6px;
+    min-height: 200px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    border: 1px solid #30363d;
+}
+
+/* Specific Layouts */
+.stack-view {
+    flex-direction: column-reverse; /* Items pile up from bottom */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Data Items */
+.data-block {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #fff;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.queue-item { background: var(--queue-color); }
+.ll-item { background: var(--ll-color); border-radius: 50%; } /* Circles for Nodes */
+.stack-item { background: var(--stack-color); width: 80%; height: 40px; }
+
+/* Arrows for Linked List */
+.ll-arrow { color: #555; font-size: 20px; }
+
+/* Controls */
+.controls { display: flex; flex-direction: column; gap: 10px; }
+.input-group { display: flex; gap: 5px; }
+
+button {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+}
+button:hover { background: #30363d; }
+button:active { transform: translateY(2px); }
+.accent { background: var(--ll-color); color: white; border: none; }
+.danger { color: #f85149; border-color: #f85149; }
+
+#log-console {
+    width: 100%;
+    max-width: 1200px;
+    background: #000;
+    color: #0f0;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #30363d;
+}
+
+@keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Process: Stack/Queue/LL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="7.jpg">
+</head>
+<body>
+
+    <header>
+        <h1>CYBER <span class="highlight">PROCESS</span></h1>
+        <p>Linear Data Structure Visualization</p>
+    </header>
+
+    <main class="dashboard">
+        
+        <section class="panel queue-panel">
+            <h2>Incoming Queue (FIFO)</h2>
+            <div class="visual-container" id="queue-container">
+                </div>
+            <div class="controls">
+                <button onclick="addToQueue()">+ Enqueue Request</button>
+                <button onclick="processQueue()">Process Next (Dequeue) -></button>
+            </div>
+        </section>
+
+        <section class="panel list-panel">
+            <h2>Active Workflow (Linked List)</h2>
+            <div class="visual-container linked-list-view" id="ll-container">
+                <p class="empty-msg">Workflow Empty</p>
+            </div>
+            <div class="controls">
+                <button class="accent" onclick="runWorkflow()">Complete Head Task</button>
+                <div class="input-group">
+                    <input type="number" id="ll-index" placeholder="Index" min="0" style="width: 60px;">
+                    <button class="small" onclick="insertAt()">Insert At</button>
+                    <button class="small danger" onclick="removeAt()">Remove At</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel stack-panel">
+            <h2>Completed History (Stack)</h2>
+            <div class="visual-container stack-view" id="stack-container">
+                </div>
+            <div class="controls">
+                <button onclick="popStack()">Undo Last (Pop)</button>
+                <button class="danger" onclick="clearStack()">Clear History</button>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="log-console">
+        > System Ready...
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
