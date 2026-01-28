@@ -3,7 +3,6 @@
 > An interactive dashboard to visualize and manipulate Linear Data Structures (Stack, Queue, and Linked List) in a simulated task management environment.
 
 [Project Preview](https://poisonmunna.github.io/Cyber-Process/)
-*(Replace the link above with a screenshot of your actual project)*
 
 ## 📖 Overview
 **Cyber-Process** gamifies the understanding of data structures. Instead of abstract diagrams, it treats data as "Tasks" that flow through a system:
@@ -60,4 +59,5 @@ class LinkedList {
 class Stack {
     push(item) { ... }
     pop() { ... }
+
 }
